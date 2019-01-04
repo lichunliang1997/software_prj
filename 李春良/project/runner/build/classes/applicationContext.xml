@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:mvc="http://www.springframework.org/schema/mvc"
+		xmlns:jee="http://www.springframework.org/schema/jee"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/jee 
+        http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<description>Spring公共配置 </description>
+
+	<!-- 配置Spring上下文的注解 -->
+	<context:annotation-config />
+	
+	<!-- 使用annotation 自动注册bean, 并保证@Required、@Autowired的属性被注入 -->
+	<context:component-scan base-package="com.jerrymice.runner">
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+	</context:component-scan>	
+	
+	<!-- 属性文件位置(C3P0连接池、Hibernate配置) -->
+	<context:property-placeholder location="classpath:*.properties" />
+	
+	<!-- 配置C3P0连接池 -->
+	<bean id="dataSourceId" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<!-- 每次增量，当需要创建Connection对象时，一次创建几个 -->
+		<property name="acquireIncrement" value="${jdbc.acquireIncrement}"></property>
+		<!-- 当创建池对象后，池中应该有几个Connection对象 -->
+		<property name="initialPoolSize" value="${jdbc.initialPoolSize}"></property>
+		<!-- 池中最少Connection个数，如果少于这个值，就会创建Connection -->
+		<property name="minPoolSize" value="${jdbc.minPoolSize}"></property>
+		<!-- 池中最大连接个数 -->
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	</bean>
+
+	<!--配置session工厂  -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<!-- 属性: 数据库连接池 -->
+		<property name="dataSource" ref="dataSourceId" />	
+		<!-- 属性:hibernate配置  -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${hibernate.show_sql}</prop>
+				<prop key="hibernate.format_sql">${hibernate.format_sql}</prop>
+				<prop key="hibernate.useUnicode">${hibernate.useUnicode}</prop>
+				<prop key="hibernate.characterEncoding">${hibernate.characterEncoding}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+		<!-- 属性: 扫描注解实体 -->
+		<property name="packagesToScan" value="com.jerrymice.runner.entity"></property>
+	</bean>
+	
+	<!-- 注入hibernateTemplate -->
+	<bean id="hibernateTemplateId" class="org.springframework.orm.hibernate5.HibernateTemplate">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+</beans>

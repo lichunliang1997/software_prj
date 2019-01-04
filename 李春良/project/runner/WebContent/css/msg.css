@@ -1,0 +1,46 @@
+.title{
+	text-align:center;
+	margin: 1em auto;
+}
+.top-title>a{
+	color: #b5b5b5;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+.this>a,
+.this>a:link,
+.this>a:visited,
+.this>a:hover,
+.this>a:active,
+.top-title>a:hover,
+.top-title>a:active
+{
+	text-decoration: none;
+	color: black;
+	border-bottom: solid 3px red;
+
+}
+.time{
+	float: right;
+	margin-top: 0.5em;
+	margin-right: 0.5em;
+	color: #b5b5b5;
+}
+.card{
+	margin-bottom: 0px;
+	margin: 0 auto;
+}
+.card img{
+	float: left;
+
+}
+.card>a,
+.card>a:hover,
+.card>a:active
+{
+	text-decoration: none;
+	color: #000000;
+}
+.head3{
+	margin-top: 0.5em;
+}

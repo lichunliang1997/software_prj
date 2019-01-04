@@ -1,0 +1,227 @@
+
+html, body{ height:100%;overflow:hidden;overflow-y: scroll;}
+
+.backIcon{
+		position:absolute;
+		top:5%;
+		left:5px;
+		width:10%;
+		
+	}
+	
+	.bottoms{
+	float:right;
+	width:30%;
+	}
+	.btncl{
+	width:130px;
+	height:35px;
+	
+    border: none;
+    color: white;
+    font-family:Arial;
+	padding-top:5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+	border-radius:5px;
+	
+	
+	}
+	.cancelbtn{
+		position: relative;
+		left:20px;
+		width:130px;
+		
+		
+	}
+
+	.evaSubmit{
+	border-radius:5px;
+	background-color:#6fa7e5;
+	   border: none;
+    color: white;
+    font-family:Arial;
+  padding-top:5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    cursor: pointer;
+	
+	}
+	.backIcon{
+        position:fixed;
+        top:1%;
+        left:1%;
+        width:10%;
+    }
+     .orderHeader{
+        width:100%;
+        margin-bottom:2%;
+       
+       
+    }
+    .name{width:30%;
+        margin-left:41%;
+        margin-top:2%;
+    }
+    .headImg{
+    	width:100%;
+    	padding-left:40%;
+    	padding-top: 3%;
+    }
+    .text1{
+        text-align:center;
+    	margin-top:5%;
+    }
+    .rating{
+    	width:100%;
+    	padding-left:10%;
+    }
+    .labels{
+    	
+    	margin-top: 5%;
+    	width:90%;
+    	height:100px;
+    	margin-left:5%;
+    	
+    	padding:10px;
+    	padding-left:20px;
+    }
+    .labelbtn{
+    	margin:2%;
+    	border-radius:10px;
+    }
+    .judgeText{
+    	margin:5%;
+    }
+    #starRating{
+    	margin-left:5%;
+    	margin-right:5%;
+    }
+    .starnum{
+    	margin-top:20px;
+    	font-size:16px;
+    }
+ 
+    .evaSubmit{
+    float:right;
+    	width:130px;
+    	height:35px;
+    }
+    .lb1{
+    	margin:10px;
+    	width:20%;
+    	float:left;
+    	height:30px;
+    	background-color:#2f83f5;
+    	color:white;
+    	border-radius:30px;
+    	border:1px solid;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb2{
+    	margin:10px;
+    	float:left;
+    	width:30%;
+    	height:30px;
+    	background-color:#3bb23e;
+    	color:white;
+    	border-radius:30px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb3{
+    	margin:10px;
+    	float:left;
+    	width:30%;
+    	height:30px;
+    	background-color:orange;
+    	color:white;
+    	border-radius:30px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb4{
+    	margin:10px;
+    	float:left;
+    	width:25%;
+    	height:30px;
+    	background-color:#04b1c2;
+    	color:white;
+    	border-radius:30px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb5{
+    	margin:10px;
+    	float:left;
+    	width:25%;
+    	height:30px;
+    	background-color:#d96d49;
+    	color:white;
+    	border-radius:30px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb6{
+    	margin:10px;
+		float:left;
+    	width:20%;
+    	height:25px;
+    	background-color:blue;
+    	color:white;
+    	border-radius:2px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    .lb7{
+    	margin:10px;
+    	float:left;
+    	width:20%;
+    	height:20px;
+    	background-color:black;
+    	color:white;
+    	border-radius:2px;
+    	text-align:center;
+    	line-height:30px;
+    }
+    
+    
+    
+    
+    body,li,p,ul { 
+    margin: 0;
+    padding: 0;
+    font: 12px/1 Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;
+}
+ul, li, ol { list-style: none; }
+/* 重置文本格式元素 */
+a { text-decoration: none; cursor: pointer; color:#333333; font-size:14px;}
+a:hover { text-decoration: none; }
+.clearfix::after{ display:block; content:''; height:0; overflow:hidden; clear:both;} 
+/*星星样式*/
+.content{ width:600px; margin:0 auto; padding-top:20px;}
+.title{ font-size:14px; background:#dfdfdf; padding:10px; margin-bottom:10px;}
+.block{ width:100%; margin:0 0 20px 0; padding-top:10px; padding-left:50px; line-height:21px;}
+.block .star_score{ float:left;}
+.star_list{height:21px;margin:50px; line-height:21px;}
+.block p,.block .attitude{ padding-left:20px; line-height:21px; display:inline-block;}
+.block p span{ color:#C00; font-size:16px; font-family:Georgia, "Times New Roman", Times, serif;}
+.star_score { background:url(../images/stark2.png); width:160px; height:21px;  position:relative; }
+.star_score a{ height:21px; display:block; text-indent:-999em; position:absolute;left:0;}
+.star_score a:hover{ background:url(../images/stars2.png);left:0;}
+.star_score a.clibg{ background:url(../images/stars2.png);left:0;}
+#starttwo .star_score { background:url(../images/starky.png);}
+#starttwo .star_score a:hover{ background:url(../images/starsy.png);left:0;}
+#starttwo .star_score a.clibg{ background:url(../images/starsy.png);left:0;}
+/*星星样式*/
+.show_number{ padding-left:50px; padding-top:20px;}
+.show_number li{ width:240px; border:1px solid #ccc; padding:10px; margin-right:5px; margin-bottom:20px;}
+.atar_Show{background:url(../images/stark2.png); width:160px; height:21px;  position:relative; float:left; }
+.atar_Show p{ background:url(../images/stars2.png);left:0; height:21px; width:134px;}
+.show_number li span{ display:inline-block; line-height:21px;}
